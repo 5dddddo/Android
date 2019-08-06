@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/activityBackground">
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical">
+<Button
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/btn1"
+android:id="@+id/btn1"
+android:padding="10px"/>
+<!--패딩은 버튼 사이의 여백-->
+<Button
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/btn2"
+    android:id="@+id/btn2"
+    android:padding="10px"/>
+<Button
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/btn3"
+    android:id="@+id/btn3"
+    android:padding="10px"/>
+<Button
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/btn4"
+    android:id="@+id/btn4"
+    android:padding="10px"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn5"
+        android:id="@+id/btn5"
+        android:padding="10px"/>
+
+    <Button
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/btn6"
+    android:id="@+id/btn6"
+    android:padding="10px"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ANR(Application not responding)"
+        android:id="@+id/btn7"
+        android:padding="10px"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="비정상 Counter app"
+        android:id="@+id/btn8"
+        android:padding="10px"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="정상 Counter app"
+        android:id="@+id/btn9"
+        android:padding="10px"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="도서 검색 및 출력"
+        android:id="@+id/btn10"
+        android:padding="10px"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="도서 검색(CUSTOM)"
+        android:id="@+id/btn11"
+        android:padding="10px"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Implicit intent (묵시적 인텐트)"
+        android:id="@+id/btn12"
+        android:padding="10px"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Kakao Map"
+        android:id="@+id/btn13"
+        android:padding="10px"/>
+
+</LinearLayout>
+    </ScrollView>
