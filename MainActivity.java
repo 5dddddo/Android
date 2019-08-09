@@ -279,6 +279,54 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        Button btn15 = (Button) findViewById(R.id.btn15);
+        btn15.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Broadcasting
+                Intent i = new Intent();
+                // Action이 정해져 있음 ->
+                i.setAction("MY_BROADCAST");
+                i.putExtra("broadcastMsg", "메시지가 전파돼요!");
+                sendBroadcast(i);
+
+            }
+        });
+
+        Button btn16 = (Button) findViewById(R.id.btn16);
+        btn16.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // 묵시적 INTENT
+                Intent i = new Intent();
+                i.setAction("START_BROADCAST_ACTIVITY");
+                startActivity(i);
+            }
+        });
+
+
+        Button btn17 = (Button) findViewById(R.id.btn17);
+        btn17.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // 묵시적 INTENT
+                Intent i = new Intent();
+                i.setAction("START_DATABASE_ACTIVITY");
+                startActivity(i);
+            }
+        });
+
+        Button btn18 = (Button) findViewById(R.id.btn18);
+        btn18.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // 묵시적 INTENT
+                Intent i = new Intent();
+                i.setAction("Contact_ACTIVITY");
+                startActivity(i);
+            }
+        });
     }
 
 
@@ -299,7 +347,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
-        String msg= intent.getExtras().getString("ServiceToActivityData");
-        Toast.makeText(this,msg,Toast.LENGTH_SHORT).show();
+        String msg = intent.getExtras().getString("ServiceToActivityData");
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
 }

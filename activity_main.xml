@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/activityBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10px"
+            android:text="@string/btn1" />
+        <!--패딩은 버튼 사이의 여백-->
+        <Button
+            android:id="@+id/btn2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10px"
+            android:text="@string/btn2" />
+
+        <Button
+            android:id="@+id/btn3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10px"
+            android:text="@string/btn3" />
+
+        <Button
+            android:id="@+id/btn4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10px"
+            android:text="@string/btn4" />
+
+        <Button
+            android:id="@+id/btn5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10px"
+            android:text="@string/btn5" />
+
+        <Button
+            android:id="@+id/btn6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10px"
+            android:text="@string/btn6" />
+
+        <Button
+            android:id="@+id/btn7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10px"
+            android:text="ANR(Application not responding)" />
+
+        <Button
+            android:id="@+id/btn8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10px"
+            android:text="비정상 Counter app" />
+
+        <Button
+            android:id="@+id/btn9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10px"
+            android:text="정상 Counter app" />
+
+        <Button
+            android:id="@+id/btn10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10px"
+            android:text="도서 검색 및 출력" />
+
+        <Button
+            android:id="@+id/btn11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10px"
+            android:text="도서 검색(CUSTOM)" />
+
+        <Button
+            android:id="@+id/btn12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10px"
+            android:text="Implicit intent (묵시적 인텐트)" />
+
+        <Button
+            android:id="@+id/btn13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10px"
+            android:text="Kakao Map" />
+
+        <Button
+            android:id="@+id/btn14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10px"
+            android:text="Kakao Book Search" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10px">
+
+            <Button
+                android:id="@+id/searviceStartBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="10px"
+                android:text="Service 시작" />
+
+            <Button
+                android:id="@+id/searviceStopBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="10px"
+                android:text="Service 중지" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10px"
+            android:text="Broadcast Message Send" />
+
+        <Button
+            android:id="@+id/btn16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10px"
+            android:text="Broadcast receiver Activity " />
+
+        <Button
+            android:id="@+id/btn17"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10px"
+            android:text="SQLite Sample Activity" />
+
+        <Button
+            android:id="@+id/btn18"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10px"
+            android:text="주소록" />
+
+    </LinearLayout>
+</ScrollView>
