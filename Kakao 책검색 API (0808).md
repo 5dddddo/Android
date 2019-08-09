@@ -2,7 +2,7 @@
 
 ### 1. 전체적인 구조
 
-![1565261128598](C:\Users\student\AppData\Roaming\Typora\typora-user-images\1565261128598.png)
+![1565261128598](https://user-images.githubusercontent.com/50972986/62771365-01f44a00-bad8-11e9-95a8-88fde3af6b16.png)
 
 
 
@@ -37,8 +37,7 @@ curl -v -X GET "https://dapi.kakao.com/v3/search/book?target=title" \
    > jackson-databind-2.8.1.jar
 
    추가 후 마우스 우클릭 - [Add as library] 클릭
-
-![1565336085803](C:\Users\student\AppData\Roaming\Typora\typora-user-images\1565336085803.png)
+![1565336085803](https://user-images.githubusercontent.com/50972986/62771415-1cc6be80-bad8-11e9-81b9-f81596939bcf.png)
 
 
 
