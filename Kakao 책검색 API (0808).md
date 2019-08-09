@@ -209,7 +209,7 @@ curl -v -X GET "https://dapi.kakao.com/v3/search/book?target=title" \
    
                // URL 형태로 전달받은 thumbnail을 bitmap 형태로 바꿔서 저장
                for(KAKAOBookVO vo : myObject){
-                   vo.BitmapImage();
+                   vo.urlToByteArray();
                }
                
                // 정상적으로 객체화가 되었으면 Intent에 
@@ -281,8 +281,7 @@ curl -v -X GET "https://dapi.kakao.com/v3/search/book?target=title" \
        private String title;
        private ArrayList<String> translators;
        private String url;
-       // thumbnail을 Bitmap type으로 변환해서 저장하는 변수
-       private Bitmap btm;
+       private byte[] thumbnailImg;
    
    
        // Default constructor
@@ -308,7 +307,7 @@ curl -v -X GET "https://dapi.kakao.com/v3/search/book?target=title" \
        // 복원 작업 때 사용되는 Constuctor
        // 복원시 가장 중요한 부분은 순서
        // 마샬링 순서와 언마샬링 순서가 동일해야 함
-       protected KAKAOBookVO(Parcel parcel) {
+        protected KAKAOBookVO(Parcel parcel) {
            authors = parcel.readArrayList(null);
            contents = parcel.readString();
            datetime = parcel.readString();
@@ -321,8 +320,8 @@ curl -v -X GET "https://dapi.kakao.com/v3/search/book?target=title" \
            title = parcel.readString();
            translators = parcel.readArrayList(null);
            url = parcel.readString();
+           thumbnailImg = parcel.createByteArray();
        }
-   
        
        // CREATOR라고 불리는 static 상수를 반드시 정의
        public static final Creator<KAKAOBookVO> CREATOR = new Creator<KAKAOBookVO>() {
@@ -359,6 +358,7 @@ curl -v -X GET "https://dapi.kakao.com/v3/search/book?target=title" \
                parcel.writeString(title);
                parcel.writeList(translators);
                parcel.writeString(url);
+               parcel.writeByteArray(thumbnailImg);
            } catch (Exception e) {
                Log.i("KAKAOLOG", e.toString());
            }
@@ -374,18 +374,20 @@ curl -v -X GET "https://dapi.kakao.com/v3/search/book?target=title" \
        // getter & setter 생략
          
        // thumbnail을 bitmap type으로 변환하는 함수
-       public void BitmapImage() {
+      public void urlToByteArray() {
+           Bitmap bmp = null;
            try {
-               URL url = new URL(thumbnail);
-               HttpURLConnection con = (HttpURLConnection) url.openConnection();
+               URL imgUrl = new URL(thumbnail);
+               HttpURLConnection con = (HttpURLConnection) imgUrl.openConnection();
                con.setDoInput(true);
                con.connect();
                InputStream is = con.getInputStream();
-               btm = BitmapFactory.decodeStream(is);
-               is.close();
-               con.disconnect();
-           } catch (Exception e) {
-               Log.i("KAKAOBOOKLog", e.toString());
+               bmp = BitmapFactory.decodeStream(is);
+               ByteArrayOutputStream stream = new ByteArrayOutputStream();
+               bmp.compress(Bitmap.CompressFormat.JPEG,100,stream);
+               thumbnailImg = stream.toByteArray();
+           } catch(Exception e) {
+               Log.i("KAKAOBOOKLog",e.toString());
            }
        }
    }
@@ -475,17 +477,30 @@ curl -v -X GET "https://dapi.kakao.com/v3/search/book?target=title" \
            }
    
            // 실제 데이터 세팅하기 위해 View component의 reference를 획득
-           ImageView iv = (ImageView) view.findViewById(R.id.customIv);
-           TextView tv1 = (TextView) view.findViewById(R.id.customTv1);
-           TextView tv2 = (TextView) view.findViewById(R.id.customTv2);
+           ImageView bookimg = view.findViewById(R.id.bookImg);
+           TextView author = view.findViewById(R.id.authorTextView);
+           TextView title = view.findViewById(R.id.titleTextView);
+           TextView price =  view.findViewById(R.id.priceTextView);
            KAKAOBookVO vo = list.get(i);
    
-           // Bitmap 형태로 ImageView에 이미지 그리기
-           iv.setImageBitmap(vo.getBtm());
-           // TextView에 책 제목 입력하기
-           tv1.setText(vo.getTitle());
-           // TextView에 책 내용 입력하기
-           tv2.setText(vo.getContents());
+         try {
+             // ImageView에 책 이미지 설정
+               Bitmap bmp = BitmapFactory.decodeByteArray(vo.getThumbnailImg(),
+                       0,vo.getThumbnailImg().length);
+               bookimg.setImageBitmap(bmp);
+   
+               StringBuilder sb = new StringBuilder();
+               for(String s : vo.getAuthors()) {
+                   sb.append(s);
+                   sb.append(",");
+               }
+               author.setText(sb.toString());
+               title.setText(vo.getTitle());
+               price.setText(vo.getPrice());
+   
+           } catch(Exception e) {
+               Log.i("KAKAOBOOKLog",e.toString());
+           }
            return view;
        }
    
@@ -507,25 +522,40 @@ curl -v -X GET "https://dapi.kakao.com/v3/search/book?target=title" \
    ``` xml
    <?xml version="1.0" encoding="utf-8"?>
    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+       android:orientation="horizontal"
        android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       android:orientation="horizontal">
+       android:layout_height="match_parent">
        <ImageView
-           android:id="@+id/customIv"
            android:layout_width="wrap_content"
-           android:layout_height="match_parent" />
+           android:layout_height="match_parent"
+           android:adjustViewBounds="true"
+           android:scaleType="fitCenter"
+           android:padding="20px"
+           android:id="@+id/bookImg"/>
        <LinearLayout
            android:layout_width="wrap_content"
            android:layout_height="match_parent"
-           android:orientation="vertical">
+           android:orientation="vertical"
+           android:padding="20px">
            <TextView
-               android:id="@+id/customTv1"
                android:layout_width="match_parent"
-               android:layout_height="wrap_content" />
-           <TextView
-               android:id="@+id/customTv2"
+               android:layout_height="wrap_content"
+               android:id="@+id/titleTextView"/>
+           <LinearLayout
                android:layout_width="match_parent"
-               android:layout_height="wrap_content" />
+               android:layout_height="wrap_content"
+               android:orientation="horizontal">
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="match_parent"
+                   android:layout_weight="1"
+                   android:id="@+id/authorTextView"/>
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="match_parent"
+                   android:layout_weight="1"
+                   android:id="@+id/priceTextView"/>
+           </LinearLayout>
        </LinearLayout>
    </LinearLayout>
    ```
