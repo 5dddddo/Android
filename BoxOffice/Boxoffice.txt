@@ -1,2 +1,0 @@
-http://www.kobis.or.kr/kobisopenapi/homepg/main/main.do
-영화 진흥 위원회 오픈 API를 이용한 앱 구현
