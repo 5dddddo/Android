@@ -8,7 +8,7 @@
 
 Android Activtry에 ListView로 단순 출력
 
---------------------------
+------
 
 > CustomBookSearch project 참고
 
@@ -27,3 +27,4 @@ Android Activity에 Custom ListView로 출력
 - 새로운 Adapter를 새로 생성 해야 함
 
 ![image](https://user-images.githubusercontent.com/50972986/62817870-d83f2f80-bb78-11e9-819d-a305b434f266.png)
+
