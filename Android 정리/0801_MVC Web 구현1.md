@@ -52,7 +52,7 @@
 
 ### MVC pattern
 
-![1564649877421](C:\Users\student\AppData\Roaming\Typora\typora-user-images\1564649877421.png)
+![image](https://user-images.githubusercontent.com/50972986/62817949-37517400-bb7a-11e9-9488-b154a03447d7.png)
 
 #### 1. Model(javabeans) 
 
@@ -122,7 +122,7 @@
 
    3. doGet()
 
-   ![1564646491055](C:\Users\student\AppData\Roaming\Typora\typora-user-images\1564646491055.png)
+   ![image](https://user-images.githubusercontent.com/50972986/62817963-839cb400-bb7a-11e9-8678-e35b30ac915b.png)
 
    
 
@@ -130,13 +130,13 @@
 
       > class name : BookService
 
-   ![1564646552179](C:\Users\student\AppData\Roaming\Typora\typora-user-images\1564646552179.png)
+   ![image](https://user-images.githubusercontent.com/50972986/62817966-8e574900-bb7a-11e9-9c9f-af683cd62a40.png)
 
    5. Database 처리를 위해 DAO 생성
 
       - JDBC 동작 순서
 
-      ![1564645411157](C:\Users\student\AppData\Roaming\Typora\typora-user-images\1564645411157.png)
+      ![image](https://user-images.githubusercontent.com/50972986/62817968-9616ed80-bb7a-11e9-845b-69e3ec1ff50b.png)
 
 
 
