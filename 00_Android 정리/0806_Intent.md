@@ -111,7 +111,7 @@ startActivity(i);
 
 3. 설정 - 일반 - 플랫폼 추가 - Android 
 
-   ![1565072572450](C:\Users\student\AppData\Roaming\Typora\typora-user-images\1565072572450.png)
+   ![image](https://user-images.githubusercontent.com/50972986/62818002-42f16a80-bb7b-11e9-8cc0-86847c59159b.png)
 
 4. 키 해시 값 가져오기
 
@@ -128,13 +128,13 @@ startActivity(i);
 
       입력하면 해시 키 값을 가져올 수 있음
 
-4. 네이티브 앱 키 복사
+5. 네이티브 앱 키 복사
 
-![1565072299087](C:\Users\student\AppData\Roaming\Typora\typora-user-images\1565072299087.png)
+![image](https://user-images.githubusercontent.com/50972986/62818003-4be23c00-bb7b-11e9-8faf-bf65cd8b098a.png)
 
 
 
-5. Android project - app - manifests - AndroidManifest.xml -
+6. Android project - app - manifests - AndroidManifest.xml -
 
    \<application\> 태그 아래에 meta-data 추가
 
@@ -144,11 +144,11 @@ startActivity(i);
     android:value="네이티브앱키" />
 ```
 
-6. SDK 다운로드
+7. SDK 다운로드
 
    > Android_DaumMap_SDK_1.4.0.0
 
-7. library 추가
+8. library 추가
 
    > Android_DaumMap_SDK_1.4.0.0\libs\libDaumMapAndroid.jar
 
@@ -166,7 +166,7 @@ startActivity(i);
 
       armeabi-v7a 폴더 추가
 
-8. KakaoMapActivity
+9. KakaoMapActivity
 
    ```
    MapView map = new MapView(this);
@@ -212,7 +212,7 @@ dialBtn.setOnClickListener(new View.OnClickListener() {
 <uses-permission android:name="android.permission.CALL_PHONE"/>
 ```
 
-Android marshmallow이후 버전부터 보안 기능 강화
+Android marshmallow 이후 버전부터 보안 기능 강화
 
 ``` java
  Button callBtn = (Button) findViewById(R.id.callBtn);
