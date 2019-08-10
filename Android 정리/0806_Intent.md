@@ -111,7 +111,7 @@ startActivity(i);
 
 3. 설정 - 일반 - 플랫폼 추가 - Android 
 
-   ![1565072572450](C:\Users\student\AppData\Roaming\Typora\typora-user-images\1565072572450.png)
+   ![image](https://user-images.githubusercontent.com/50972986/62818002-42f16a80-bb7b-11e9-8cc0-86847c59159b.png)
 
 4. 키 해시 값 가져오기
 
@@ -130,7 +130,7 @@ startActivity(i);
 
 4. 네이티브 앱 키 복사
 
-![1565072299087](C:\Users\student\AppData\Roaming\Typora\typora-user-images\1565072299087.png)
+![image](https://user-images.githubusercontent.com/50972986/62818003-4be23c00-bb7b-11e9-8faf-bf65cd8b098a.png)
 
 
 
