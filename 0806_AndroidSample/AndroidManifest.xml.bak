@@ -16,7 +16,7 @@
 
         <meta-data
             android:name="com.kakao.sdk.AppKey"
-            android:value="MY__KEY" />
+            android:value="f018a61fd0bf2b2aac4f92bd2d20afc4" />
 
         <activity android:name=".KAKAOMAPActivity"></activity>
         <activity android:name=".ImplicitIntentTestActivity">

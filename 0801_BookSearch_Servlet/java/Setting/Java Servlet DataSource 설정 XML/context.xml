@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+    <!-- Default set of monitored resources -->
+	<WatchedResource>WEB-INF/web.xml</WatchedResource>
+	<Resource type="javax.sql.DataSource" 
+			  name="jdbc/mySQLDB" auth="Container"
+			  username="android" 
+			  password="android" 
+			  driverClassName="com.mysql.jdbc.Driver"
+			  url="jdbc:mysql://127.0.0.1:3306/library?characterEncoding=UTF-8" />
+</Context>
