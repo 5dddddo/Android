@@ -1,5 +1,12 @@
 # Intent (08/06)
 
+- 앱 구성 요소 간에 작업 수행을 위한 정보를 전달하는 역할
+
+- 다른 Activity를 띄우거나 기능을 동작시키기 위한 수단으로 사용
+  - startActivity(Intent) / startActivityForResult(Intent) : Activity를 화면에 띄울 때 사용
+  - startService() / bindService() : 서비스를 시작할 때 사용
+  - broadcastIntent() : Intent 객체를 broadcast 방식으로 전송할 때 사용
+
 # Explicit Intent
 
 : 명시적 intent 생성 시 Component 객체를 통해 새로 띄울 창 지정
