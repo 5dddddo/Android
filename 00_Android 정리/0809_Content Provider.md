@@ -29,7 +29,6 @@
    - 모바일 디바이스 / 외부 저장매체에 직접 파일을 저장할 수 있음
    - 이 파일에 대해서는 다른 App에서 접근 불가
    - 속도가 느림
-   
 2. Database 처리
 
    - 안드로이드 시스템 내부에 있는 SQLite라는 소형 DB를 이용해서 데이터 처리
@@ -37,38 +36,36 @@
      - SQLite를 어떻게 이용할까?
      - 이 DB를 외부에 제공하려면 어떻게 해야할까?
      - 다른 앱이 가지고 있는 DB에 접근하려면 어떻게 해야할까?
-  
+    
    - DB를 만든 App에 종속
    - SQLiteDatabase 객체는 DB를 처리하는 Query Method를 가짐
-
 3. Preferences 처리
 
    - 기본형 데이터 타입에 대한 key와 value의 쌍을 저장
    - App이 실행될 때마다 load되어야 하는 기본적인 App의 환경 설정이나 인사말 등을 저장하기 위해 사용
-
 4. 네트워크 처리
+
+<br>
 
 
 ## SQLite DB를 이용해보자
 
 #### SQLite를 어떻게 이용할까?
 
-1.
+1. SQL
 
-2. SQL
+```
+// table이 없으면 userName TEXT, userAge INTEGER를 가진 member table생성
+CREATE TABLE IF NOT EXISTS member(userName TEXT, userAge INTEGER);
 
-   ```
-   // table이 없으면 userName TEXT, userAge INTEGER를 가진 member table생성
-   CREATE TABLE IF NOT EXISTS member(userName TEXT, userAge INTEGER);
-   
-   // 데이터 입력
-   INSERT INTO member VALUES('홍길동',30);
-   INSERT INTO member VALUES('오길동',10);
-   INSERT INTO member VALUES('이길동',40);
-   
-   ```
+// 데이터 입력
+INSERT INTO member VALUES('홍길동',30);
+INSERT INTO member VALUES('오길동',10);
+INSERT INTO member VALUES('이길동',40);
 
-   
+```
+
+
 
 #### 이 DB를 외부에 제공하려면 어떻게 해야할까?
 
