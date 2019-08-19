@@ -12,8 +12,6 @@
 
   ​	 다른 앱에서 사용할 수 없음
 
-- 앱을 만들어서 주소록에서 데이터를 가져와서 이용하고자 함
-
 - 사용자가 만드는 Custom App은 일반적으로 Content Provider를 만들지 않음
 
   Content Resolver만 사용하고 
