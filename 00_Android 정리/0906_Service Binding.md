@@ -164,8 +164,9 @@ protected void onNewIntent(Intent intent){
 #### Service를 Binding하는 방법
 
 1. 서비스의 **onBind()** 콜백 메서드를 구현해서 바인딩 서비스 구현
-   - onBind()는 클라이언트가 서비스와 상호작용하는 데 사용할 수 있는 프로그래밍 인터페이스를 정의하는 IBinder 객체를 반환
-
+   
+- onBind()는 클라이언트가 서비스와 상호작용하는 데 사용할 수 있는 프로그래밍 인터페이스를 정의하는 IBinder 객체를 반환
+   
 2. startService()를 호출해서 시작된 서비스를 시작하면 서비스가 무한히 실행되도록 할 수 있고 **bindService()**를 호출하여 클라이언트가 해당 서비스에 바인딩되도록 할 수 있음
 
    - startService()를 통해 서비스를 시작하고 bindService()로 바인딩하면
