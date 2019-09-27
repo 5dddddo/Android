@@ -106,7 +106,7 @@
 
    1. Servlet 생성 
 
-      class name : BookSearchTtitleServelt
+      class name : BookSearchTtitleServlet
 
       java package : com.test.controller
 
