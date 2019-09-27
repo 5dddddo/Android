@@ -6,7 +6,7 @@
 
 > 전체 코드는 CustomBookSearch 프로젝트 참고
 
-## Servlet 
+## DAO 
 
 - 문제 : 위의 모델의 DAO에서
 
