@@ -20,7 +20,7 @@
 
   
 
-- BookVO.java
+- BookDAO.java
 
 ![image](https://user-images.githubusercontent.com/50972986/62818772-f90e8180-bb86-11e9-9c78-6854d5fb293f.png)
 
